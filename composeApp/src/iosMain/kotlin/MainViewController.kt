@@ -7,8 +7,7 @@ import androidx.compose.ui.window.ComposeUIViewController
 fun MainViewController() = ComposeUIViewController(
     content = { App() },
     configure = {
-        this.accessibilitySyncOptions =
-            AccessibilitySyncOptions.Always(debugLogger = teste())
+        accessibilitySyncOptions = AccessibilitySyncOptions.Always(null)
     }
 )
 
