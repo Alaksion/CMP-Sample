@@ -1,4 +1,5 @@
-appId: org.example.project.KotlinProject
+appId: org.example.project
 ---
 - launchApp
-- tapOn: "Click me!"
+- tapOn: "Input"
+- inputText: "1234"
