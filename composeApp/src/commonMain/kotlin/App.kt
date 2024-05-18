@@ -1,7 +1,9 @@
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -22,13 +24,18 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun App() {
     MaterialTheme {
         var value by remember { mutableStateOf("") }
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-            TextField(
-                value,
-                onValueChange = { value = it },
-                modifier = Modifier.fillMaxWidth().padding(16.dp)
-                    .semantics { contentDescription = "Input" },
-            )
+        Scaffold {
+            Column(
+                Modifier.fillMaxWidth().systemBarsPadding(),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                TextField(
+                    value,
+                    onValueChange = { value = it },
+                    modifier = Modifier.fillMaxWidth().padding(16.dp)
+                        .semantics { contentDescription = "Input" },
+                )
+            }
         }
     }
 }
