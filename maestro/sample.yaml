@@ -1,5 +1,7 @@
 appId: org.example.project.KotlinProject
 ---
-- launchApp
+- launchApp:
+    permissions:
+      location: deny
 - tapOn: "Input"
 - inputText: "1234"

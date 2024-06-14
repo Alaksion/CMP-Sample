@@ -1,10 +1,10 @@
 package org.example.project
 
 import App
+import ShakeFlow
 import android.hardware.Sensor
 import android.hardware.SensorManager
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 
@@ -12,6 +12,7 @@ class MainActivity : ComponentActivity(), AppShakeListener {
 
     private var sensorManager: SensorManager? = null
     private var sensorListener: AppSensorEventListener? = null
+    private val eventFlow = ShakeFlow()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +45,6 @@ class MainActivity : ComponentActivity(), AppShakeListener {
     }
 
     override fun onShake() {
-        Toast.makeText(this, "App Shaked", Toast.LENGTH_LONG).show()
+        eventFlow.sendShakeEvent()
     }
 }

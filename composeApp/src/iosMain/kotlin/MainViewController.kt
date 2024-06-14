@@ -5,16 +5,10 @@ import androidx.compose.ui.window.ComposeUIViewController
 
 @OptIn(ExperimentalComposeApi::class)
 fun MainViewController() = ComposeUIViewController(
-    content = { App() },
+    content = {
+        App()
+    },
     configure = {
         accessibilitySyncOptions = AccessibilitySyncOptions.Always(null)
     }
 )
-
-@OptIn(ExperimentalComposeApi::class)
-class teste : AccessibilityDebugLogger {
-    override fun log(message: Any?) {
-
-    }
-
-}
