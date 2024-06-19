@@ -1,0 +1,1 @@
+expect fun log(tag: String, message: String)
